@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float Layout Template</title>
+    <style>
+        header, .column {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        header {
+            background-color: lightgray;
+        }
+
+        .column {
+            float: left;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Header</h1>
+    </header>
+    <div class="column">
+        <p>This is the first paragraph that I am writing for the tutorial #2 for CSI 3540 course offered at the University of Ottawa.</p>
+    </div>
+    <div class="column">
+        <p>This is the second paragraph that I am writing for the tutorial #2 for CSI 3540 course offered at the University of Ottawa.</p>
+    </div>
+    <div class="clearfix"></div>
+</body>
+</html>

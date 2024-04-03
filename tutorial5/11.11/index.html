@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reverse Tokens</title>
+<script>
+function reverseTokens() {
+    var inputText = document.getElementById("inputText").value;
+    var tokens = inputText.split(" ");
+    var reversedTokens = tokens.reverse();
+    var outputText = reversedTokens.join(" ");
+    document.getElementById("output").innerText = outputText;
+}
+</script>
+</head>
+<body>
+<h1>Reverse Tokens</h1>
+<label for="inputText">Enter a line of text:</label>
+<input type="text" id="inputText">
+<button onclick="reverseTokens()">Reverse Tokens</button>
+<br><br>
+<p>Reversed Tokens:</p>
+<p id="output"></p>
+</body>
+</html>

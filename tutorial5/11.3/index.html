@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math Library Functions Test</title>
+<script>
+function testMathFunctions() {
+    var result = "";
+    
+    // Test Math functions and display tables of return values
+    // Absolute value
+    result += "Math.abs()\n";
+    result += "Argument\tResult\n";
+    for (var i = -5; i <= 5; i++) {
+        result += i + "\t\t" + Math.abs(i) + "\n";
+    }
+    result += "\n";
+    
+    // Sine
+    result += "Math.sin()\n";
+    result += "Argument\tResult\n";
+    for (var angle = 0; angle <= 360; angle += 15) {
+        var radians = angle * Math.PI / 180;
+        result += angle + "\t\t" + Math.sin(radians).toFixed(4) + "\n";
+    }
+    result += "\n";
+    
+    // Square root
+    result += "Math.sqrt()\n";
+    result += "Argument\tResult\n";
+    for (var num = 0; num <= 10; num++) {
+        result += num + "\t\t" + Math.sqrt(num).toFixed(4) + "\n";
+    }
+    result += "\n";
+    
+    // Random numbers between 0 and 1
+    result += "Math.random()\n";
+    result += "Iteration\tResult\n";
+    for (var i = 1; i <= 10; i++) {
+        result += i + "\t\t" + Math.random().toFixed(4) + "\n";
+    }
+    
+    // Display the results in the textarea
+    document.getElementById("output").value = result;
+}
+</script>
+</head>
+<body>
+<h1>Math Library Functions Test</h1>
+<button onclick="testMathFunctions()">Test Math Functions</button>
+<br><br>
+<textarea id="output" rows="20" cols="50"></textarea>
+</body>
+</html>

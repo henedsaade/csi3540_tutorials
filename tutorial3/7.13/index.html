@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salesperson Earnings</title>
+<script>
+// Define the item values
+var itemValues = [239.99, 129.75, 99.95, 350.89];
+
+// Calculate the total earnings
+var totalEarnings = 200; // Base weekly earnings
+for (var i = 0; i < itemValues.length; i++) {
+    totalEarnings += itemValues[i] * 0.09; // Add 9% of each item value
+}
+
+// Output the earnings
+document.writeln("<p>Salesperson's earnings for last week: $" + totalEarnings.toFixed(2) + "</p>");
+</script>
+</head>
+<body></body>
+</html>

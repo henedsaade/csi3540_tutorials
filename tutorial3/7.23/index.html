@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Decryption</title>
+</head>
+<body>
+<script>
+// Prompt the user to enter an encrypted four-digit integer
+var input = prompt("Enter an encrypted four-digit integer:");
+
+// Convert the input to an array of digits
+var digits = input.split("").map(Number);
+
+// Swap the second and fourth digits
+var temp = digits[1];
+digits[1] = digits[3];
+digits[3] = temp;
+
+// Swap the first and third digits
+temp = digits[0];
+digits[0] = digits[2];
+digits[2] = temp;
+
+// Decrypt the digits
+for (var i = 0; i < digits.length; i++) {
+    digits[i] = (digits[i] + 3) % 10; // Reverse the encryption process
+}
+
+// Output HTML5 text displaying the decrypted integer
+document.write("<p>Decrypted integer: " + digits.join("") + "</p>");
+</script>
+</body>
+</html>

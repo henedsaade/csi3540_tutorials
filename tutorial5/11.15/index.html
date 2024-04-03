@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strings Starting with "b"</title>
+<script>
+function filterStrings() {
+    var inputText = document.getElementById("inputText").value;
+    var strings = inputText.split("\n");
+    var filteredStrings = strings.filter(function(string) {
+        return string.trim().toLowerCase().startsWith("b");
+    });
+    var outputText = filteredStrings.join("\n");
+    document.getElementById("output").innerText = outputText;
+}
+</script>
+</head>
+<body>
+<h1>Strings Starting with "b"</h1>
+<label for="inputText">Enter a series of strings:</label>
+<textarea id="inputText" rows="5"></textarea>
+<button onclick="filterStrings()">Filter</button>
+<br><br>
+<p>Filtered Strings:</p>
+<textarea id="output" rows="5" readonly></textarea>
+</body>
+</html>

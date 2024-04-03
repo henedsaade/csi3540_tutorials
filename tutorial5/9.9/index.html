@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Distance Calculator</title>
+</head>
+<body>
+
+<h1>Distance Calculator</h1>
+
+<form id="distanceForm">
+  <label for="x1">Enter the x-coordinate of point 1:</label>
+  <input type="number" id="x1" name="x1" required>
+  <label for="y1">Enter the y-coordinate of point 1:</label>
+  <input type="number" id="y1" name="y1" required>
+  <label for="x2">Enter the x-coordinate of point 2:</label>
+  <input type="number" id="x2" name="x2" required>
+  <label for="y2">Enter the y-coordinate of point 2:</label>
+  <input type="number" id="y2" name="y2" required>
+  <button type="submit">Calculate Distance</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+  function distance(x1, y1, x2, y2) {
+    return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+  }
+
+  document.getElementById('distanceForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get the coordinates from the form
+    var x1 = parseFloat(document.getElementById('x1').value);
+    var y1 = parseFloat(document.getElementById('y1').value);
+    var x2 = parseFloat(document.getElementById('x2').value);
+    var y2 = parseFloat(document.getElementById('y2').value);
+
+    // Calculate the distance using the distance function
+    var dist = distance(x1, y1, x2, y2);
+
+    // Display the result in a paragraph on the page
+    document.getElementById('result').textContent = "The distance between the points is: " + dist.toFixed(2);
+  });
+</script>
+
+</body>
+</html>

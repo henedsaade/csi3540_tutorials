@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Number Rounding</title>
+<script>
+function roundToInteger(number) {
+    return Math.floor(number);
+}
+
+function roundToTenths(number) {
+    return Math.floor(number * 10 + 0.5) / 10;
+}
+
+function roundToHundredths(number) {
+    return Math.floor(number * 100 + 0.5) / 100;
+}
+
+function roundToThousandths(number) {
+    return Math.floor(number * 1000 + 0.5) / 1000;
+}
+
+function displayRoundedValues() {
+    var x = parseFloat(document.getElementById("inputNumber").value);
+    var result = "Original Value: " + x + "\n";
+    result += "Rounded to Integer: " + roundToInteger(x) + "\n";
+    result += "Rounded to Tenths: " + roundToTenths(x) + "\n";
+    result += "Rounded to Hundredths: " + roundToHundredths(x) + "\n";
+    result += "Rounded to Thousandths: " + roundToThousandths(x) + "\n";
+    document.getElementById("output").innerText = result;
+}
+</script>
+</head>
+<body>
+<h1>Number Rounding</h1>
+<label for="inputNumber">Enter a number:</label>
+<input type="number" id="inputNumber" step="any">
+<button onclick="displayRoundedValues()">Round</button>
+<br><br>
+<textarea id="output" rows="5" cols="50" readonly></textarea>
+</body>
+</html>

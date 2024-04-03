@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagonal Linear Gradient</title>
+</head>
+<body>
+    <canvas id="rainbowCanvas" width="500" height="500"></canvas>
+
+    <script>
+        // Get the canvas element
+        const canvas = document.getElementById('rainbowCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Create a diagonal linear gradient using the colors of the rainbow
+        const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+        gradient.addColorStop(0, 'red');
+        gradient.addColorStop(1 / 6, 'orange');
+        gradient.addColorStop(2 / 6, 'yellow');
+        gradient.addColorStop(3 / 6, 'green');
+        gradient.addColorStop(4 / 6, 'blue');
+        gradient.addColorStop(5 / 6, 'indigo');
+        gradient.addColorStop(1, 'violet');
+
+        // Fill the canvas with the gradient
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+    </script>
+</body>
+</html>
